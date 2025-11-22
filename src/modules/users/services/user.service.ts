@@ -20,6 +20,10 @@ export class UserService {
     return this.userQuerier.findAll();
   }
 
+  async findById(id: string): Promise<User | null> {
+    return this.userQuerier.findById(id);
+  }
+
   async findByEmail(email: string): Promise<User | null> {
     return this.userQuerier.findByEmail(email);
   }

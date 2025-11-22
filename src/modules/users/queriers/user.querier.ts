@@ -15,6 +15,10 @@ export class UserQuerier {
     return this.repo.find();
   }
 
+  async findById(id: string): Promise<User | null> {
+    return this.repo.findOne({ where: { id } });
+  }
+
   async findByEmail(email: string): Promise<User | null> {
     return this.repo.findOne({ where: { email } });
   }
