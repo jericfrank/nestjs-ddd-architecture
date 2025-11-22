@@ -3,7 +3,7 @@ import { TypeOrmModuleOptions } from '@nestjs/typeorm';
 import path from 'path';
 
 export const typeOrmConfig = (config: ConfigService): TypeOrmModuleOptions => ({
-  type: 'mysql',
+  type: 'postgres',
   host: config.get<string>('DATABASE_HOST', 'localhost'),
   port: parseInt(config.get<string>('DATABASE_PORT', '5432')),
   username: config.get<string>('DATABASE_USER', 'postgres'),
