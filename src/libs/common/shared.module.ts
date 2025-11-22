@@ -1,5 +1,6 @@
 import { Module } from '@nestjs/common';
-import { IsEmailUniqueConstraint } from '../validators/is-email-unique.validator';
+
+import { IsEmailUniqueConstraint } from './validators/is-email-unique.validator';
 
 @Module({
   providers: [

@@ -10,4 +10,7 @@ export class User {
 
   @Column()
   email: string;
+
+  @Column({ type: 'varchar', nullable: false, default: 'secret1234' })
+  password: string;
 }

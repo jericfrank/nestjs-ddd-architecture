@@ -3,7 +3,8 @@ import { ConfigModule } from '@nestjs/config';
 
 import { UserModule } from './modules/users/user.module';
 import { DatabaseModule } from './infrastructure/database/db.module';
-import { SharedModule } from './libs/common/modules/shared.module';
+import { AuthModule } from './modules/auth/auth.module';
+import { SharedModule } from './libs/common/shared.module';
 
 @Module({
   imports: [
@@ -13,6 +14,7 @@ import { SharedModule } from './libs/common/modules/shared.module';
     }),
     DatabaseModule,
     SharedModule,
+    AuthModule,
     UserModule,
   ],
 })
