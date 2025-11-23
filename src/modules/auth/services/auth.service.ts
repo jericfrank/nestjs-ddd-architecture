@@ -1,4 +1,8 @@
-import { BadRequestException, Injectable, UnauthorizedException } from '@nestjs/common';
+import {
+  BadRequestException,
+  Injectable,
+  UnauthorizedException,
+} from '@nestjs/common';
 import * as bcrypt from 'bcrypt';
 import { JwtService } from '@nestjs/jwt';
 
@@ -12,7 +16,10 @@ export class AuthService {
     private readonly jwtService: JwtService,
   ) {}
 
-  async login(dto: { email: string; password: string }): Promise<{ accessToken: string }> {
+  async login(dto: {
+    email: string;
+    password: string;
+  }): Promise<{ accessToken: string }> {
     const user = await this.userService.findByEmail(dto.email);
 
     if (!user) {
@@ -32,7 +39,7 @@ export class AuthService {
 
   async register(dto: RegisterUserDto) {
     const existing = await this.userService.findByEmail(dto.email);
-  
+
     if (existing) {
       throw new BadRequestException('Email already in use');
     }

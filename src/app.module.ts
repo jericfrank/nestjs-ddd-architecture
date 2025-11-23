@@ -1,10 +1,14 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 
-import { UserModule } from './modules/users/user.module';
-import { DatabaseModule } from './infrastructure/database/db.module';
-import { AuthModule } from './modules/auth/auth.module';
 import { SharedModule } from './libs/common/shared.module';
+
+import { DatabaseModule } from './infrastructure/database/db.module';
+
+import { UserModule } from './modules/users/user.module';
+import { AuthModule } from './modules/auth/auth.module';
+import { PostsModule } from './modules/posts/posts.module';
+
 
 @Module({
   imports: [
@@ -16,6 +20,7 @@ import { SharedModule } from './libs/common/shared.module';
     SharedModule,
     AuthModule,
     UserModule,
+    PostsModule,
   ],
 })
 export class AppModule {}

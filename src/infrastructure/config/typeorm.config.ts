@@ -4,11 +4,11 @@ import path from 'path';
 
 export const typeOrmConfig = (config: ConfigService): TypeOrmModuleOptions => ({
   type: 'postgres',
-  host: config.get<string>('DATABASE_HOST', 'localhost'),
-  port: parseInt(config.get<string>('DATABASE_PORT', '5432')),
-  username: config.get<string>('DATABASE_USER', 'postgres'),
-  password: config.get<string>('DATABASE_PASSWORD', 'postgres'),
-  database: config.get<string>('DATABASE_NAME', 'hogasiDb'),
+  host: config.get<string>('DATABASE_HOST'),
+  port: Number(config.get<number>('DATABASE_PORT')),
+  username: config.get<string>('DATABASE_USER'),
+  password: config.get<string>('DATABASE_PASSWORD'),
+  database: config.get<string>('DATABASE_NAME'),
   autoLoadEntities: true,
   synchronize: true,
   entities: [path.join(__dirname, '../../**/*.entity{.ts,.js}')],
