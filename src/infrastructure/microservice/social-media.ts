@@ -1,11 +1,11 @@
-import { Injectable } from '@nestjs/common';
-import { ConfigService } from '@nestjs/config';
+import { Injectable, Module } from '@nestjs/common';
+import { ConfigModule, ConfigService } from '@nestjs/config';
 import axios, { AxiosInstance } from 'axios';
 
 import { PostsUserDto } from 'src/modules/users/dto/posts-user.dto';
 
 @Injectable()
-export class SocialMediaClient {
+class SocialMediaClient {
   private axiosClient: AxiosInstance;
 
   constructor(private readonly configService: ConfigService) {
@@ -24,3 +24,12 @@ export class SocialMediaClient {
     return response.data;
   }
 }
+
+@Module({
+  imports: [ConfigModule],
+  providers: [SocialMediaClient],
+  exports: [SocialMediaClient],
+})
+class SocialMediaModule {}
+
+export { SocialMediaClient, SocialMediaModule };

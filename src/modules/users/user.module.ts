@@ -7,7 +7,7 @@ import { UserQuerier } from './queriers/user.querier';
 import { UserRepository } from './repositories/user.repository';
 import { UserService } from './services/user.service';
 
-import { SocialMediaModule } from 'src/infrastructure/microservices/social-media/social-media.module';
+import { SocialMediaModule } from 'src/infrastructure/microservice/social-media';
 
 @Module({
   imports: [

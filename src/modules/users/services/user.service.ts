@@ -6,7 +6,7 @@ import { UserQuerier } from '../queriers/user.querier';
 import { UserRepository } from '../repositories/user.repository';
 import { PostsUserDto } from '../dto/posts-user.dto';
 
-import { SocialMediaClient } from 'src/infrastructure/microservices/social-media/social-media.client';
+import { SocialMediaClient } from 'src/infrastructure/microservice/social-media';
 
 @Injectable()
 export class UserService {
